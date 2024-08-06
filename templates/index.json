@@ -9,6 +9,11 @@
 */
 {
   "sections": {
+    "hero_section": {
+      "type": "hero-section",
+      "settings": {
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -75,16 +80,11 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "hero_section": {
-      "type": "hero-section",
-      "settings": {
-      }
     }
   },
   "order": [
+    "hero_section",
     "image_banner",
-    "featured_collection",
-    "hero_section"
+    "featured_collection"
   ]
 }
