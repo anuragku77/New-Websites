@@ -23,8 +23,8 @@
                       {% for banner in banner_text %}
                         {{ banner | append: '<br>' }}
                       {% endfor %}
-              Laptop<br>
-              Collection
+              {% comment %} Laptop<br>
+              Collection {% endcomment %}
             </h3>
             <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -59,7 +59,7 @@
         {
           "type": "text",
           "id": "banner_text",
-          "label": "Hero Title 1"
+          "label": "Hero Text"
         },
       ]
     }
