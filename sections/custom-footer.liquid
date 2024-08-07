@@ -80,25 +80,19 @@
           <ul class="newsletter-follow">
             {%- if section.settings.show_social -%}
               {%- if settings.social_twitter_link != blank -%}
-                <a
-                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                  href="{{ settings.social_twitter_link }}"
-                  ><i class="fab fa-twitter"></i
-                ></a>
+                <li>
+                    <a href="{{ settings.social_twitter_link }}"><i class="fa fa-twitter"></i></a>
+                  </li>
               {%- endif -%}
               {%- if settings.social_facebook_link != blank -%}
-                <a
-                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                  href="{{ settings.social_facebook_link }}"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
+                <li>
+                    <a href="{{ settings.social_facebook_link }}"><i class="fa fa-facebook"></i></a>
+                  </li>
               {%- endif -%}
               {%- if settings.social_youtube_link != blank -%}
-                <a
-                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                  href="{{ settings.social_youtube_link }}"
-                  ><i class="fab fa-youtube"></i
-                ></a>
+                <li>
+                    <a href="{{ settings.social_instagram_link }}"><i class="fa fa-instagram"></i></a>
+                  </li>
               {%- endif -%}
               {%- if settings.social_linkedin_link != blank -%}
                 <a
