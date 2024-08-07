@@ -70,11 +70,43 @@
                                   {%- endif -%}
                                 {%- endform -%}
                               {%- endif -%}
+                            </form>
 							{% comment %} <form>
 								<input class="input" type="email" placeholder="Enter Your Email">
 								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
 							</form> {% endcomment %}
 							<ul class="newsletter-follow">
+
+                                {%- if section.settings.show_social -%}
+                                    {%- if settings.social_twitter_link != blank -%}
+                                      <a
+                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                                        href="{{ settings.social_twitter_link }}"
+                                        ><i class="fab fa-twitter"></i
+                                      ></a>
+                                    {%- endif -%}
+                                    {%- if settings.social_facebook_link != blank -%}
+                                      <a
+                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                                        href="{{ settings.social_facebook_link }}"
+                                        ><i class="fab fa-facebook-f"></i
+                                      ></a>
+                                    {%- endif -%}
+                                    {%- if settings.social_youtube_link != blank -%}
+                                      <a
+                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                                        href="{{ settings.social_youtube_link }}"
+                                        ><i class="fab fa-youtube"></i
+                                      ></a>
+                                    {%- endif -%}
+                                    {%- if settings.social_linkedin_link != blank -%}
+                                      <a
+                                        class="btn btn-outline-secondary btn-md-square rounded-circle"
+                                        href="{{ settings.social_linkedin_link }}"
+                                        ><i class="fab fa-linkedin-in"></i
+                                      ></a>
+                                    {%- endif -%}
+                                  {%- endif -%}
 								<li>
 									<a href="#"><i class="fa fa-facebook"></i></a>
 								</li>
