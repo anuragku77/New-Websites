@@ -14,6 +14,63 @@
 					<div class="col-md-12">
 						<div class="newsletter">
 							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                            {%- if section.settings.newsletter_enable -%}
+                                {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                                  <input type="hidden" name="contact[tags]" value="newsletter">
+                                  <div class="newsletter-form__field-wrapper">
+                                    <div class="">
+                                      <input
+                                        id="NewsletterForm--{{ section.id }}"
+                                        type="email"
+                                        name="contact[email]"
+                                        class="form-control border-0 w-100 py-3 px-4 rounded-pill"
+                                        value="{{ form.email }}"
+                                        aria-required="true"
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        autocomplete="email"
+                                        {% if form.errors %}
+                                          autofocus
+                                          aria-invalid="true"
+                                          aria-describedby="ContactFooter-error"
+                                        {% elsif form.posted_successfully? %}
+                                          aria-describedby="ContactFooter-success"
+                                        {% endif %}
+                                        placeholder="{{ 'newsletter.label' | t }}"
+                                        required
+                                      >
+                                      <button
+                                        type="submit"
+                                        class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white"
+                                        name="commit"
+                                        id="Subscribe"
+                                        aria-label="{{ 'newsletter.button_label' | t }}"
+                                        style="top: 0; right: 0;"
+                                      >
+                                        Subscribe Now
+                                      </button>
+                                    </div>
+                                    {%- if form.errors -%}
+                                      <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                                        {%- render 'icon-error' -%}
+                                        {{- form.errors.translated_fields.email | capitalize }}
+                                        {{ form.errors.messages.email -}}
+                                      </small>
+                                    {%- endif -%}
+                                  </div>
+                                  {%- if form.posted_successfully? -%}
+                                    <h3
+                                      class="newsletter-form__message newsletter-form__message--success form__message"
+                                      id="ContactFooter-success"
+                                      tabindex="-1"
+                                      autofocus
+                                    >
+                                      {%- render 'icon-success' -%}
+                                      {{- 'newsletter.success' | t }}
+                                    </h3>
+                                  {%- endif -%}
+                                {%- endform -%}
+                              {%- endif -%}
 							<form>
 								<input class="input" type="email" placeholder="Enter Your Email">
 								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
