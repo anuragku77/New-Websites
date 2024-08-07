@@ -18,10 +18,18 @@
             "image_1": "shopify:\/\/shop_images\/shop01.png",
             "title_1": ""
           }
+        },
+        "hero_section_VxywBX": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop03.png",
+            "title_1": ""
+          }
         }
       },
       "block_order": [
-        "hero_section_AxM9Vb"
+        "hero_section_AxM9Vb",
+        "hero_section_VxywBX"
       ],
       "settings": {
       }
