@@ -19,6 +19,10 @@
           </div>
           <div class="shop-body">
             <h3>
+              {% assign banner_text = section.settings.banner_text | split: ',' %}
+                      {% for banner in banner_text %}
+                        {{ banner | append: '<br>' }}
+                      {% endfor %}
               Laptop<br>
               Collection
             </h3>
@@ -27,9 +31,6 @@
         </div>
       </div>
       {% endfor %}
-      <!-- /shop -->
-
-      
       <!-- /shop -->
     </div>
     <!-- /row -->
