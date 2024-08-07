@@ -29,7 +29,8 @@
         "hero_section_NpxzEJ": {
           "type": "hero_section",
           "settings": {
-            "banner_text": ""
+            "image_1": "shopify:\/\/shop_images\/shop02.png",
+            "banner_text": "Cameras<br>Collection"
           }
         }
       },
