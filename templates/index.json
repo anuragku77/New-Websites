@@ -14,6 +14,11 @@
       "settings": {
       }
     },
+    "feature_product": {
+      "type": "feature-product",
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -46,6 +51,7 @@
   },
   "order": [
     "hero_section",
-    "featured_collection"
+    "featured_collection",
+    "feature_product"
   ]
 }
