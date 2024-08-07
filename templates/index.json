@@ -11,7 +11,20 @@
   "sections": {
     "hero_section": {
       "type": "hero-section",
-      "settings": {}
+      "blocks": {
+        "hero_section_AxM9Vb": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop01.png",
+            "title_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "hero_section_AxM9Vb"
+      ],
+      "settings": {
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
