@@ -25,11 +25,19 @@
             "image_1": "shopify:\/\/shop_images\/shop03.png",
             "title_1": ""
           }
+        },
+        "hero_section_aeGfp3": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop02.png",
+            "title_1": ""
+          }
         }
       },
       "block_order": [
         "hero_section_AxM9Vb",
-        "hero_section_VxywBX"
+        "hero_section_VxywBX",
+        "hero_section_aeGfp3"
       ],
       "settings": {
       }
