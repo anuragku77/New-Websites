@@ -60,3 +60,38 @@
   <!-- /container -->
 </div>
 <!-- /SECTION -->
+
+{% schema %}
+{
+  "name": "Product Collection",
+  "enabled_on": {
+    "templates": ["index"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_collection_title",
+      "label": "Product Collection Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_collection",
+      "name": "Select Product Collection",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "product_collection",
+          "label": "Product Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Collection"
+    }
+  ]
+}
+{% endschema %}
