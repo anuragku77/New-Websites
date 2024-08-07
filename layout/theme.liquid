@@ -266,6 +266,25 @@
       {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
+    <!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Slick -->
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+
+		<!-- nouislider -->
+    {{ 'nouislider.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Font Awesome Icon -->
+    {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Custom stlylesheet -->
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -372,5 +391,11 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'bootstrap.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'nouislider.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery.zoom.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
