@@ -22,7 +22,8 @@
         "hero_section_CkycwU": {
           "type": "hero_section",
           "settings": {
-            "banner_text": ""
+            "image_1": "shopify:\/\/shop_images\/shop03.png",
+            "banner_text": "Accessories<br>Collection"
           }
         },
         "hero_section_NpxzEJ": {
