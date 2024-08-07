@@ -42,6 +42,11 @@
       "settings": {
       }
     },
+    "feature_product": {
+      "type": "feature-product",
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -69,11 +74,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "feature_product": {
-      "type": "feature-product",
-      "settings": {
       }
     }
   },
