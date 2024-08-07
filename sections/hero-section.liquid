@@ -19,7 +19,7 @@
           </div>
           <div class="shop-body">
             <h3>
-              {% assign banner_text = section.settings.banner_text | split: ',' %}
+              {% assign banner_text = block.settings.banner_text | split: ',' %}
                       {% for banner in banner_text %}
                         {{ banner | append: '<br>' }}
                       {% endfor %}
