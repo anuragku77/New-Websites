@@ -280,12 +280,15 @@
 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
 		<!-- nouislider -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
 
 		<!-- Font Awesome Icon -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
     {%- unless settings.type_body_font.system? -%}
