@@ -14,6 +14,7 @@
 					<div class="col-md-12">
 						<div class="newsletter">
 							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                            <form>
                             {%- if section.settings.newsletter_enable -%}
                                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                                   <input type="hidden" name="contact[tags]" value="newsletter">
