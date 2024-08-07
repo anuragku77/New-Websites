@@ -5,226 +5,249 @@
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-                            <form>
-                            {%- if section.settings.newsletter_enable -%}
-                                {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                                  <input type="hidden" name="contact[tags]" value="newsletter">
-                                  <div class="newsletter-form__field-wrapper">
-                                    <div class="">
-                                      <input
-                                        id="NewsletterForm--{{ section.id }}"
-                                        type="email"
-                                        name="contact[email]"
-                                        class=""
-                                        value="{{ form.email }}"
-                                        aria-required="true"
-                                        autocorrect="off"
-                                        autocapitalize="off"
-                                        autocomplete="email"
-                                        {% if form.errors %}
-                                          autofocus
-                                          aria-invalid="true"
-                                          aria-describedby="ContactFooter-error"
-                                        {% elsif form.posted_successfully? %}
-                                          aria-describedby="ContactFooter-success"
-                                        {% endif %}
-                                        placeholder="{{ 'newsletter.label' | t }}"
-                                        required
-                                      >
-                                      <button
-                                        type="submit"
-                                        class="newsletter-btn"
-                                        name="commit"
-                                        id="Subscribe"
-                                      >
-                                        <i class="fa fa-envelope"></i> Subscribe
-                                      </button>
-                                    </div>
-                                    {%- if form.errors -%}
-                                      <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                                        {%- render 'icon-error' -%}
-                                        {{- form.errors.translated_fields.email | capitalize }}
-                                        {{ form.errors.messages.email -}}
-                                      </small>
-                                    {%- endif -%}
-                                  </div>
-                                  {%- if form.posted_successfully? -%}
-                                    <h3
-                                      class="newsletter-form__message newsletter-form__message--success form__message"
-                                      id="ContactFooter-success"
-                                      tabindex="-1"
-                                      autofocus
-                                    >
-                                      {%- render 'icon-success' -%}
-                                      {{- 'newsletter.success' | t }}
-                                    </h3>
-                                  {%- endif -%}
-                                {%- endform -%}
-                              {%- endif -%}
-                            </form>
-							{% comment %} <form>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form> {% endcomment %}
-							<ul class="newsletter-follow">
+<!-- NEWSLETTER -->
+<div id="newsletter" class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="newsletter">
+          <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+          <form>
+            {%- if section.settings.newsletter_enable -%}
+              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                  <div class="">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class=""
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                      {% endif %}
+                      placeholder="{{ 'newsletter.label' | t }}"
+                      required
+                    >
+                    <button
+                      type="submit"
+                      class="newsletter-btn"
+                      name="commit"
+                      id="Subscribe"
+                    >
+                      <i class="fa fa-envelope"></i> Subscribe
+                    </button>
+                  </div>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                      {%- render 'icon-error' -%}
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                </div>
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="newsletter-form__message newsletter-form__message--success form__message"
+                    id="ContactFooter-success"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    {%- render 'icon-success' -%}
+                    {{- 'newsletter.success' | t }}
+                  </h3>
+                {%- endif -%}
+              {%- endform -%}
+            {%- endif -%}
+          </form>
+          {% comment %}
+            <form>
+            	<input class="input" type="email" placeholder="Enter Your Email">
+            	<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+            </form>
+          {% endcomment %}
+          <ul class="newsletter-follow">
+            {%- if section.settings.show_social -%}
+              {%- if settings.social_twitter_link != blank -%}
+                <a
+                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                  href="{{ settings.social_twitter_link }}"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              {%- endif -%}
+              {%- if settings.social_facebook_link != blank -%}
+                <a
+                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                  href="{{ settings.social_facebook_link }}"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              {%- endif -%}
+              {%- if settings.social_youtube_link != blank -%}
+                <a
+                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
+                  href="{{ settings.social_youtube_link }}"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              {%- endif -%}
+              {%- if settings.social_linkedin_link != blank -%}
+                <a
+                  class="btn btn-outline-secondary btn-md-square rounded-circle"
+                  href="{{ settings.social_linkedin_link }}"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              {%- endif -%}
+            {%- endif -%}
+            <li>
+              <a href="{{ settings.social_facebook_link }}"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="{{ settings.social_twitter_link }}"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="{{ settings.social_instagram_link }}"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="{{ settings.social_youtube_link }}"><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /NEWSLETTER -->
 
-                                {%- if section.settings.show_social -%}
-                                    {%- if settings.social_twitter_link != blank -%}
-                                      <a
-                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                                        href="{{ settings.social_twitter_link }}"
-                                        ><i class="fab fa-twitter"></i
-                                      ></a>
-                                    {%- endif -%}
-                                    {%- if settings.social_facebook_link != blank -%}
-                                      <a
-                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                                        href="{{ settings.social_facebook_link }}"
-                                        ><i class="fab fa-facebook-f"></i
-                                      ></a>
-                                    {%- endif -%}
-                                    {%- if settings.social_youtube_link != blank -%}
-                                      <a
-                                        class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                                        href="{{ settings.social_youtube_link }}"
-                                        ><i class="fab fa-youtube"></i
-                                      ></a>
-                                    {%- endif -%}
-                                    {%- if settings.social_linkedin_link != blank -%}
-                                      <a
-                                        class="btn btn-outline-secondary btn-md-square rounded-circle"
-                                        href="{{ settings.social_linkedin_link }}"
-                                        ><i class="fab fa-linkedin-in"></i
-                                      ></a>
-                                    {%- endif -%}
-                                  {%- endif -%}
-								<li>
-									<a href="{{ settings.social_facebook_link }}"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="{{ settings.social_twitter_link }}"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="{{ settings.social_instagram_link }}"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="{{ settings.social_youtube_link }}"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
+<!-- FOOTER -->
+<footer id="footer">
+  <!-- top footer -->
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-3 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-title">About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-		<!-- FOOTER -->
-		<footer id="footer">
-			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
-								</ul>
-							</div>
-						</div>
+        <div class="col-md-3 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-title">Categories</h3>
+            <ul class="footer-links">
+              <li><a href="#">Hot deals</a></li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Smartphones</a></li>
+              <li><a href="#">Cameras</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+        </div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categories</h3>
-								<ul class="footer-links">
-									<li><a href="#">Hot deals</a></li>
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
-								</ul>
-							</div>
-						</div>
+        <div class="clearfix visible-xs"></div>
 
-						<div class="clearfix visible-xs"></div>
+        <div class="col-md-3 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-title">Information</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Orders and Returns</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Information</h3>
-								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Orders and Returns</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-								</ul>
-							</div>
-						</div>
+        <div class="col-md-3 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-title">Service</h3>
+            <ul class="footer-links">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">View Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Track My Order</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /top footer -->
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Service</h3>
-								<ul class="footer-links">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">View Cart</a></li>
-									<li><a href="#">Wishlist</a></li>
-									<li><a href="#">Track My Order</a></li>
-									<li><a href="#">Help</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /top footer -->
-
-			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-						</div>
-					</div>
-						<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /bottom footer -->
-		</footer>
-		<!-- /FOOTER -->
-
+  <!-- bottom footer -->
+  <div id="bottom-footer" class="section">
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="footer-payments">
+            <li>
+              <a href="#"><i class="fa fa-cc-visa"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-credit-card"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-cc-paypal"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-cc-mastercard"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-cc-discover"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-cc-amex"></i></a>
+            </li>
+          </ul>
+          <span class="copyright">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </span>
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /bottom footer -->
+</footer>
+<!-- /FOOTER -->
 
 {% schema %}
 {
