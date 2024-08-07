@@ -11,34 +11,6 @@
   "sections": {
     "hero_section": {
       "type": "hero-section",
-      "blocks": {
-        "hero_section_AxM9Vb": {
-          "type": "hero_section",
-          "settings": {
-            "image_1": "shopify:\/\/shop_images\/shop01.png",
-            "banner_text": "Laptop , Collection"
-          }
-        },
-        "hero_section_VxywBX": {
-          "type": "hero_section",
-          "settings": {
-            "image_1": "shopify:\/\/shop_images\/shop03.png",
-            "banner_text": "Accessories , Collection"
-          }
-        },
-        "hero_section_aeGfp3": {
-          "type": "hero_section",
-          "settings": {
-            "image_1": "shopify:\/\/shop_images\/shop02.png",
-            "banner_text": "Cameras , Collection"
-          }
-        }
-      },
-      "block_order": [
-        "hero_section_AxM9Vb",
-        "hero_section_VxywBX",
-        "hero_section_aeGfp3"
-      ],
       "settings": {
       }
     },
