@@ -11,7 +11,36 @@
   "sections": {
     "hero_section": {
       "type": "hero-section",
-      "settings": {}
+      "blocks": {
+        "hero_section_GdPqem": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop01.png",
+            "banner_text": "Laptop<br>Collection"
+          }
+        },
+        "hero_section_CkycwU": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop03.png",
+            "banner_text": "Accessories<br>Collection"
+          }
+        },
+        "hero_section_NpxzEJ": {
+          "type": "hero_section",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/shop02.png",
+            "banner_text": "Cameras<br>Collection"
+          }
+        }
+      },
+      "block_order": [
+        "hero_section_GdPqem",
+        "hero_section_CkycwU",
+        "hero_section_NpxzEJ"
+      ],
+      "settings": {
+      }
     },
     "feature_product":{
       "type": "feature-product",
@@ -44,6 +73,11 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "feature_product": {
+      "type": "feature-product",
+      "settings": {
       }
     }
   },
