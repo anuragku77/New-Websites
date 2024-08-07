@@ -292,6 +292,24 @@
         onload="this.media='all'"
       >
     {%- endif -%}
+        <!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Slick -->
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+
+		<!-- nouislider -->
+    {{ 'nouislider.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Font Awesome Icon -->
+    {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
+
+		<!-- Custom stlylesheet -->
+    {{ 'style.css' | asset_url | stylesheet_tag }}
 
     <script>
       if (Shopify.designMode) {
