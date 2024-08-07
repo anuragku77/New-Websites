@@ -6,30 +6,28 @@
     <div class="row">
       <!-- shop -->
       {% for block in section.blocks %}
-      <div class="col-md-4 col-xs-6">
-        <div class="shop">
-          <div class="shop-img">
-            <img
-              src="{{ block.settings.image_1 | img_url: 'master' }}"
-              class=""
-              alt=""
-              width="auto"
-              height="auto"
-            >
-          </div>
-          <div class="shop-body">
-            <h3>
-              {% assign banner_text = block.settings.banner_text | split: ',' %}
-                      {% for banner in banner_text %}
-                        {{ banner | append: '<br>' }}
-                      {% endfor %}
-              {% comment %} Laptop<br>
-              Collection {% endcomment %}
-            </h3>
-            <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+        <div class="col-md-4 col-xs-6">
+          <div class="shop">
+            <div class="shop-img">
+              <img
+                src="{{ block.settings.image_1 | img_url: 'master' }}"
+                class=""
+                alt=""
+                width="auto"
+                height="auto"
+              >
+            </div>
+            <div class="shop-body">
+              <h3>
+                {% assign banner_text = block.settings.banner_text | split: ',' %}
+                {% for banner in banner_text %}
+                  {{ banner | append: '<br>' }}
+                {% endfor %}
+              </h3>
+              <a href="{{ product }}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
           </div>
         </div>
-      </div>
       {% endfor %}
       <!-- /shop -->
     </div>
@@ -60,7 +58,7 @@
           "type": "text",
           "id": "banner_text",
           "label": "Hero Text"
-        },
+        }
       ]
     }
   ],
