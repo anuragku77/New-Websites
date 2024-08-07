@@ -89,14 +89,15 @@
                     <a href="{{ settings.social_facebook_link }}"><i class="fa fa-facebook"></i></a>
                   </li>
               {%- endif -%}
-              {%- if settings.social_youtube_link != blank -%}
-                <a
-                  class="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                  href="{{ settings.social_youtube_link }}"
-                  ><i class="fab fa-youtube"></i
-                ></a>
+              {%- if settings.social_instagram_link != blank -%}
+                <li>
+                    <a href="{{ settings.social_instagram_link }}"><i class="fa fa-instagram"></i></a>
+                  </li>
               {%- endif -%}
               {%- if settings.social_linkedin_link != blank -%}
+                <li>
+                    <a href="{{ settings.social_youtube_link }}"><i class="fab fa-youtube"></i></a>
+                  </li>
                 <a
                   class="btn btn-outline-secondary btn-md-square rounded-circle"
                   href="{{ settings.social_linkedin_link }}"
