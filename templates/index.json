@@ -16,21 +16,21 @@
           "type": "hero_section",
           "settings": {
             "image_1": "shopify:\/\/shop_images\/shop01.png",
-            "title_1": ""
+            "banner_text": "Laptop , Collection"
           }
         },
         "hero_section_VxywBX": {
           "type": "hero_section",
           "settings": {
             "image_1": "shopify:\/\/shop_images\/shop03.png",
-            "title_1": ""
+            "banner_text": ""
           }
         },
         "hero_section_aeGfp3": {
           "type": "hero_section",
           "settings": {
             "image_1": "shopify:\/\/shop_images\/shop02.png",
-            "title_1": ""
+            "banner_text": ""
           }
         }
       },
